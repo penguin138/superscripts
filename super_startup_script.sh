@@ -10,7 +10,7 @@ gsettings set org.gnome.desktop.interface icon-theme 'Moka'
 echo "installing git..."
 sudo apt-get install git
 git config --global user.name "penguin138"
-git config --global user.email "fridaythethirteens@gmail.com"
+git config --global user.email $1
 git config --global push.default matching
 echo "setting up ssh..."
 ssh-keygen
