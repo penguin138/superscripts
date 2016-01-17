@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "installing moka..."
 sudo add-apt-repository ppa:moka/stable
 sudo add-apt-repository ppa:moka/daily
