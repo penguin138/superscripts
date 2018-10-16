@@ -1,0 +1,45 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+set number                    "line numbers
+set mouse=a                   " mouse support
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+" source tree plugin
+Plugin 'scrooloose/nerdtree'
+" status line plugin
+Plugin 'bling/vim-airline'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+syntax on                    " syntax highlighting
+colorscheme desert           " colorscheme selection
+
+
+" nerdtree settings
+" launch nerdtree on vim start
+autocmd vimenter * NERDTree  
+" launch nerdtree when no file has been specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"launch nerdtree in the specified directory
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" source vimrc on save
+autocmd! bufwritepost .vimrc source %
+
+"natural tab navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"natural splits
+set splitbelow
+set splitright
