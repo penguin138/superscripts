@@ -1,6 +1,7 @@
 #! /bin/bash
 
-apt install \
+apt-get update && apt-get upgrade -y
+apt-get install \
 apparmor \
 cifs-utils \
 curl \
@@ -11,6 +12,5 @@ lsb-release \
 network-manager \
 nfs-common \
 systemd-journal-remote \
-systemd-resolved \
 udisks2 \
 wget -y
