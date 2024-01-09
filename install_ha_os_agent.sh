@@ -1,6 +1,6 @@
 #! /bin/bash
 
-version="1.4.3"
+version="1.4.1"
 
 wget "https://github.com/home-assistant/os-agent/releases/download/${version}/os-agent_${version}_linux_armv7.deb"
 
